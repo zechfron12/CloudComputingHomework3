@@ -11,7 +11,11 @@ import AbstractRestService from '../abstracts/AbstractRestService';
 export class PatientService extends AbstractRestService<Patient> {
   currentPatient$ = new BehaviorSubject<Patient>({} as Patient);
   constructor(private http: HttpClient) {
-    super(http, BASE_API_URL + 'Patients', new BehaviorSubject<Patient[]>([]));
+    super(
+      http,
+      'https://patients-dot-cc-lab-3-382417.lm.r.appspot.com/patients',
+      new BehaviorSubject<Patient[]>([])
+    );
     this.currentPatient$.next(this.getPatientFromLocalStorage());
 
     this.currentPatient$.subscribe((patient) => {

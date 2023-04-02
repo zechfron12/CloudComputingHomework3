@@ -12,7 +12,7 @@ export class AppointmentsService extends AbstractRestService<Appointment> {
   constructor(private http: HttpClient) {
     super(
       http,
-      BASE_API_URL + 'Appointments',
+      'https://appointments-dot-cc-lab-3-382417.lm.r.appspot.com/appointments',
       new BehaviorSubject<Appointment[]>([])
     );
   }
