@@ -1,0 +1,14 @@
+runtime: nodejs16
+
+instance_class: F2
+
+env_variables:
+  BUCKET_NAME: "my-doc-appointment"
+
+handlers:
+  - url: /
+    static_files: dist/my-doc-appointment/index.html
+    upload: dist/my-doc-appointment/index.html
+
+  - url: /
+    static_dir: dist/my-doc-appointment
